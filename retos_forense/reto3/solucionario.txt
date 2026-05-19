@@ -1,0 +1,27 @@
+=========================================
+SOLUCIONARIO RETO FORENSE 3 - FOREMOST
+=========================================
+Título: Fragmentos en el Caos
+Vulnerabilidad: Carving de Archivos
+Dificultad: Media
+
+FLAG OBTENIDA:
+COMANDO{F0R3M0ST_R3CUP3R4C1ON_F0R3NS3}
+
+PASOS PARA RESOLVER:
+1. Instalar foremost:
+   sudo apt install foremost
+
+2. Ejecutar foremost en el disco:
+   foremost -i disco_forense.img -o output
+
+3. Buscar la flag en archivos recuperados:
+   cd output/zip/
+   unzip *.zip
+   cat flag.txt
+
+HERRAMIENTAS ÚTILES:
+- foremost
+- scalpel
+- binwalk
+- photorec

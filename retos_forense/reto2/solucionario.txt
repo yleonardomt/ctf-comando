@@ -1,0 +1,10 @@
+=========================================
+SOLUCIONARIO RETO FORENSE 2 - STEGHIDE
+=========================================
+
+FLAG OBTENIDA:
+COMANDO{ST3GH1D3_4RCH1V0_0CULT0_F0R3NS3}
+
+PASOS:
+steghide extract -sf imagen.jpg -p 1234
+cat secreto.txt

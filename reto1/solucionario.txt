@@ -1,0 +1,23 @@
+=========================================
+SOLUCIONARIO RETO 1 - IDOR
+=========================================
+Título: El Espejo de la Identidad
+URL: http://192.168.70.43:5001
+Vulnerabilidad: Insecure Direct Object Reference (IDOR)
+Dificultad: Fácil (Verde)
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Al ingresar a la URL de la aplicación web, el sistema carga por defecto el identificador del usuario en los parámetros de la URL, viéndose de la siguiente manera:
+   http://192.168.70.43:5001/?id=1
+
+2. El enigma sugiere que eres "el principio solitario" (usuario 1) y debes buscar al "ente que te sigue" (usuario 2).
+
+3. La vulnerabilidad IDOR permite manipular parámetros expuestos para acceder a registros no autorizados.
+
+4. Modificamos el parámetro en la barra de direcciones del navegador, cambiando "id=1" por "id=2":
+   http://192.168.70.43:5001/?id=2
+
+5. Al recargar la página, la aplicación confía en nuestro input, revelando la FLAG oculta.
+
+FLAG OBTENIDA:
+COMANDO{1D0R_R3FL3J0_0CULT0_B0L}

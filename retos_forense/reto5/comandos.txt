@@ -1,0 +1,192 @@
+ls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+history
+ls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+history
+COMANDO{L1NUX_C0M4ND0S_F0R3NS3}
+whoami
+id
+ls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+historyls -la
+pwd
+echo "flag no esta aqui"
+cat /etc/passwd
+grep -r "COMANDO" /
+find / -name "*.txt" 2>/dev/null
+history

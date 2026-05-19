@@ -1,0 +1,20 @@
+=========================================
+SOLUCIONARIO RETO 7 - COMMAND INJECTION
+=========================================
+Título: Interrupción del Flujo
+URL: http://192.168.70.43:5007
+Vulnerabilidad: OS Command Injection
+
+PASOS PARA LA EXPLOTACIÓN:
+1. El sistema ejecuta internamente: ping -c 2 [INPUT]
+2. En sistemas Linux, podemos encadenar comandos usando operadores como ';', '&&' o '|'.
+3. Probamos la inyección concatenando un comando de listado:
+   Payload: 127.0.0.1; ls -la /
+4. Si el sistema devuelve el resultado del ping y luego el listado de archivos de la raíz, confirmamos la ejecución de comandos.
+5. Según el reporte, el objetivo está en /var/log/mando_central/access.log.
+6. Construimos el payload final para leer el archivo:
+   Payload: 127.0.0.1; cat /var/log/mando_central/access.log
+7. El sistema imprimirá el contenido del log, revelando la FLAG.
+
+FLAG OBTENIDA:
+COMANDO{CMD_1NJ3CT_S1ST3M4_VULN3R4BL3}

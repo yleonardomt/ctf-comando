@@ -1,0 +1,7 @@
+TÍTULO: El Archivo del Soldado
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: Configuration Files
+
+DESCRIPCIÓN TÁCTICA:
+Operador, encontramos el archivo .bashrc de un operador enemigo.
+Los alias pueden esconder secretos. Revíselo.

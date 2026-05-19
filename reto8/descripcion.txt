@@ -1,0 +1,6 @@
+TÍTULO: El Sello de la Legión
+URL: http://192.168.70.43:5008
+
+INFORME TÁCTICO:
+Operador, el sistema le asignó un token guardado en cookies. Examine ese token en jwt.io. Verá su rol: "cadete". Cámbielo a "general". Pero la firma dejará de ser válida. Necesita la clave secreta. Inteligencia reporta que usan "BOLIVIA123". Firme el nuevo token y reemplácelo. El sistema lo ascenderá.
+

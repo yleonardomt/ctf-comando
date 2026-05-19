@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comando - Verificador de Activos de Alto Nivel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+        :root {
+            --theme-color: #00ffcc;
+            --theme-color-glow: rgba(0, 255, 204, 0.4);
+            --theme-color-dim: rgba(0, 255, 204, 0.1);
+            --neon-pink: #ff003c;
+            --dark-bg: #03060a;
+            --panel-bg: rgba(3, 8, 16, 0.7);
+            --text-main: #e0e6ed;
+            --terminal-green: #0f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--dark-bg);
+            background-image: linear-gradient(var(--theme-color-dim) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--theme-color-dim) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            font-family: 'Share Tech Mono', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::after {
+            content: " ";
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%),
+                        linear-gradient(90deg, rgba(255,0,0,0.06), rgba(0,255,0,0.02), rgba(0,0,255,0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .container { width: 90%; max-width: 550px; position: relative; z-index: 10; animation: bootUp 0.8s ease-out; }
+        @keyframes bootUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+        .glitch {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 20px var(--theme-color-glow);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--dark-bg);
+        }
+        .glitch::before { left: 2px; text-shadow: -2px 0 var(--neon-pink); animation: glitch 3s infinite; }
+        .glitch::after { left: -2px; text-shadow: -2px 0 var(--theme-color); animation: glitch 2.5s infinite; }
+        @keyframes glitch { 0% { clip: rect(10px, 9999px, 31px, 0); } 100% { clip: rect(15px, 9999px, 90px, 0); } }
+
+        .card {
+            background: var(--panel-bg);
+            border: 1px solid var(--theme-color-glow);
+            border-top: 4px solid var(--theme-color);
+            padding: 2rem;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .card:hover { box-shadow: 0 0 40px var(--theme-color-dim); border-color: var(--theme-color); }
+
+        .badge-container { position: absolute; top: -12px; right: 20px; display: flex; gap: 8px; }
+        .badge {
+            background: var(--dark-bg);
+            color: var(--theme-color);
+            border: 1px solid var(--theme-color);
+            padding: 3px 12px;
+            font-size: 0.7rem;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; margin-bottom: 0.5rem; letter-spacing: 2px; display: inline-block; border-bottom: 2px solid var(--theme-color); padding-bottom: 0.5rem; }
+
+        .terminal-box {
+            background: #020408;
+            border-left: 3px solid var(--terminal-green);
+            padding: 0.8rem;
+            margin: 1rem 0;
+            color: var(--terminal-green);
+            font-size: 0.8rem;
+            text-align: left;
+        }
+        .cursor { display: inline-block; width: 8px; height: 1rem; background: var(--terminal-green); animation: blink 1s step-end infinite; vertical-align: bottom; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+        .cyber-input {
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid #1f2937;
+            border-bottom: 2px solid var(--theme-color);
+            color: #fff;
+            padding: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+            outline: none;
+        }
+        .cyber-input:focus { background: var(--theme-color-dim); border-color: var(--theme-color); }
+
+        .cyber-btn {
+            background: var(--theme-color-dim);
+            color: var(--theme-color);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            padding: 1rem;
+            border: 1px solid var(--theme-color);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            width: 100%;
+            transition: 0.3s;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        }
+        .cyber-btn:hover { background: var(--theme-color); color: var(--dark-bg); box-shadow: 0 0 15px var(--theme-color); transform: translateY(-2px); }
+
+        .output {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #020408;
+            border: 1px solid var(--theme-color);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            color: var(--theme-color);
+            text-align: center;
+        }
+
+        .footer { text-align: center; font-size: 0.6rem; color: #4a6a4a; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(0,255,204,0.2); }
+        .subtitle { font-size: 0.8rem; color: #5c6b7a; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glitch" data-text="VERIFICADOR DE ACTIVOS">VERIFICADOR ACTIVOS</div>
+        <div class="card">
+            <div class="badge-container">
+                <div class="badge">RETO 10</div>
+                <div class="badge">BLIND SQLI</div>
+            </div>
+
+            <h1>Búsqueda de Activos</h1>
+            <div class="subtitle">Unidad de Ciberdefensa - Bolivia</div>
+
+            <div class="terminal-box">
+                <p>$ systemctl start asset_verifier<span class="cursor"></span></p>
+                <p>$ Modo: Validación binaria</p>
+            </div>
+
+            <p style="font-size: 0.8rem; color: #5c6b7a; margin-bottom: 0.5rem;">Ingrese el identificador numérico para validar el estado en la red nacional.</p>
+
+            <form method="POST">
+                <input type="text" name="id" class="cyber-input" placeholder="ID_ACTIVO" autocomplete="off">
+                <button type="submit" class="cyber-btn">VALIDAR INTEGRIDAD</button>
+            </form>
+
+            {% if mensaje %}
+            <div class="output">>> {{ mensaje }}</div>
+            {% endif %}
+
+            <div class="footer">COMANDO TÁCTICO • UNIDAD CIBERNÉTICA • RETO 10</div>
+        </div>
+    </div>
+</body>
+</html>

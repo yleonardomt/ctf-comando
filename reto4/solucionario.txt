@@ -1,0 +1,21 @@
+=========================================
+SOLUCIONARIO RETO 4 - SQL INJECTION
+=========================================
+Título: Brecha en el Mando Central
+URL: http://192.168.70.43:5004
+Vulnerabilidad: Inyección SQL (Bypass de Autenticación)
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Accedemos al portal de la Red de Mando Central que nos pide un usuario y contraseña.
+2. Al no existir sanitización, podemos inyectar comandos directamente en el input del usuario.
+3. El objetivo es que la condición de la base de datos siempre devuelva verdadero (TRUE).
+4. En el campo OPERADOR_ID, ingresamos el payload clásico de SQLi:
+   ' OR 1=1 --
+   
+   (La comilla cierra la cadena. 'OR 1=1' es siempre verdadero. El guion doble '--' comenta el resto de la consulta).
+
+5. En la contraseña ingresamos cualquier cosa.
+6. Presionamos "AUTENTICAR". Se valida el acceso y revela la FLAG.
+
+FLAG OBTENIDA:
+COMANDO{SQL1_B4S3_D3_D4T0S_C0MPR0M3T1D4}

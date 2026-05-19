@@ -1,0 +1,5 @@
+FLAG: COMANDO{Z1P_CR4CK3O_C0NTR4S3N4}
+
+SOLUCIÓN:
+unzip -P 1234 secreto.zip
+cat flag.txt

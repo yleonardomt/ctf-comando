@@ -1,0 +1,5 @@
+FLAG: COMANDO{DD_3XTR4CT10N_H34D3R_F00T3R}
+
+SOLUCIÓN:
+dd if=archivo.dat bs=1 skip=64 count=50 2>/dev/null
+dd if=archivo.dat bs=1 skip=4M count=50 2>/dev/null

@@ -1,0 +1,6 @@
+TÍTULO: Fragmentos en el Caos
+DIFICULTAD: Media (Amarillo)
+VULNERABILIDAD: Carving de Archivos (Foremost)
+
+DESCRIPCIÓN TÁCTICA:
+Operador, hemos capturado una imagen de disco corrupta del enemigo. El archivo está dañado y fragmentado, pero inteligencia confirma que contiene una FLAG oculta en algún sector. La herramienta foremost puede recuperar archivos basándose en sus firmas (headers y footers). Su misión es analizar este disco, recuperar cualquier archivo de texto y extraer la FLAG. El caos es solo una ilusión cuando se tiene la herramienta correcta. Proceda con el carving.

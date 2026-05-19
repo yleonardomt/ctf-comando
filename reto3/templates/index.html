@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlace Satelital TKS-1 - Autenticación</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+        :root {
+            --theme-color: #b829ff;
+            --theme-color-glow: rgba(184, 41, 255, 0.4);
+            --theme-color-dim: rgba(184, 41, 255, 0.1);
+            --neon-pink: #ff003c;
+            --dark-bg: #03060a;
+            --panel-bg: rgba(3, 8, 16, 0.7);
+            --text-main: #e0e6ed;
+            --terminal-green: #0f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            background-image: linear-gradient(var(--theme-color-dim) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--theme-color-dim) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            font-family: 'Share Tech Mono', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 550px;
+            position: relative;
+            z-index: 10;
+            animation: bootUp 0.8s ease-out forwards;
+        }
+
+        @keyframes bootUp {
+            0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .glitch-wrapper {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .glitch {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            text-shadow: 0 0 20px var(--theme-color-glow);
+            letter-spacing: 2px;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--dark-bg);
+        }
+
+        .glitch::before {
+            left: 3px;
+            text-shadow: -2px 0 var(--neon-pink);
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -3px;
+            text-shadow: -2px 0 var(--theme-color);
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 31px, 0); }
+            5% { clip: rect(70px, 9999px, 12px, 0); }
+            10% { clip: rect(29px, 9999px, 83px, 0); }
+            15% { clip: rect(54px, 9999px, 45px, 0); }
+            20% { clip: rect(81px, 9999px, 13px, 0); }
+            100% { clip: rect(15px, 9999px, 90px, 0); }
+        }
+
+        .challenge-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--theme-color-glow);
+            border-top: 4px solid var(--theme-color);
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 0 30px var(--theme-color-dim);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+        }
+
+        .challenge-card:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.9), inset 0 0 50px var(--theme-color-dim);
+            border-color: var(--theme-color);
+        }
+
+        .badge-container {
+            position: absolute;
+            top: -14px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .badge {
+            background: var(--dark-bg);
+            color: var(--theme-color);
+            border: 1px solid var(--theme-color);
+            padding: 4px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 0 10px var(--theme-color-glow);
+            text-transform: uppercase;
+        }
+
+        .challenge-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .challenge-title::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--theme-color);
+            box-shadow: 0 0 10px var(--theme-color);
+        }
+
+        .subtitle {
+            color: var(--theme-color);
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .terminal-box {
+            background: #020408;
+            border: 1px solid #1f2937;
+            border-left: 3px solid var(--terminal-green);
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--terminal-green);
+            box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.05);
+        }
+
+        .terminal-box p {
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1rem;
+            background-color: var(--terminal-green);
+            animation: blink 1s step-end infinite;
+            vertical-align: bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .logo-sat {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cyber-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #1f2937;
+            border-bottom: 2px solid var(--theme-color);
+            color: #fff;
+            padding: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .cyber-input:focus {
+            background: var(--theme-color-dim);
+            border-color: var(--theme-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 15px var(--theme-color-dim);
+        }
+
+        .cyber-btn {
+            position: relative;
+            background: var(--theme-color-dim);
+            color: var(--theme-color);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 1rem 2rem;
+            border: 1px solid var(--theme-color);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            overflow: hidden;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            width: 100%;
+        }
+
+        .cyber-btn:hover {
+            background: var(--theme-color);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px var(--theme-color), 0 0 30px var(--theme-color);
+            transform: translateY(-2px);
+        }
+
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 3px;
+            background: #fff;
+            box-shadow: 0 0 15px #fff;
+            transition: all 0.5s ease;
+        }
+
+        .cyber-btn:hover::before {
+            left: 100%;
+        }
+
+        .footer-rank {
+            text-align: right;
+            font-size: 0.6rem;
+            color: #4a6a4a;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(184, 41, 255, 0.2);
+            letter-spacing: 2px;
+        }
+
+        .warning-text {
+            color: #ffcc00;
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glitch-wrapper">
+            <div class="glitch" data-text="TKS-1 SAT">TKS-1 SAT</div>
+        </div>
+
+        <div class="challenge-card">
+            <div class="badge-container">
+                <div class="badge">RETO 3</div>
+                <div class="badge">INFO LEAKAGE</div>
+            </div>
+
+            <div class="challenge-title">
+                Enlace Satelital TKS-1
+            </div>
+            <div class="subtitle">Autenticación Requerida - Nivel de Seguridad 4</div>
+
+            <div class="logo-sat">📡</div>
+
+            <div class="terminal-box">
+                <p>$ systemctl status sat_link</p>
+                <p>$ Autenticación pendiente...<span class="cursor"></span></p>
+            </div>
+
+            <!-- 
+                =========================================================
+                LOG DE DESPLIEGUE - DIVISIÓN DE INGENIERÍA
+                =========================================================
+                TODO: Eliminar este bloque antes de pasar el nodo a producción.
+                Nota para el Tte. Ramírez: 
+                El sistema de enlace principal está fallando con la base de datos LDAP. 
+                He habilitado una llave de contingencia temporal (override key) 
+                para el enlace satelital.
+                
+                Llave de acceso de emergencia: COMANDO{1NF0_L34K_0P3R4C10N_S4T3L1T4L}
+                
+                POR FAVOR, BORRAR ESTO LUEGO DE LA PRUEBA. NO DEJAR RASTROS.
+                =========================================================
+            -->
+
+            <form method="POST">
+                <input type="text" name="credencial" class="cyber-input" placeholder="Ingrese Código de Operador" autocomplete="off">
+                <input type="password" name="pin" class="cyber-input" placeholder="PIN de Seguridad">
+                <button type="submit" class="cyber-btn">ESTABLECER CONEXIÓN</button>
+            </form>
+
+            <div class="warning-text">
+                ⚠ Conexión encriptada. El acceso no autorizado está penado por la ley militar.
+            </div>
+
+            <div class="footer-rank">
+                COMANDO TÁCTICO • UNIDAD CIBERNÉTICA • RETO 3
+            </div>
+        </div>
+    </div>
+</body>
+</html>

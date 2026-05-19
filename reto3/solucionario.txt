@@ -1,0 +1,18 @@
+=========================================
+SOLUCIONARIO RETO 3 - INFO LEAKAGE
+=========================================
+Título: Rastros en la Arena
+URL: http://192.168.70.43:5003
+Vulnerabilidad: Information Leakage / Source Code Exposure
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Accedemos a la URL del portal de enlace satelital. Vemos un panel de inicio de sesión estándar que solicita un Código de Operador y un PIN.
+2. Si intentamos ingresar credenciales aleatorias, la página no responde positivamente.
+3. El enigma menciona que los desarrolladores suelen dejar "notas invisibles" y sugiere "inspeccionar la estructura". Esto es una clara referencia a revisar el código fuente de la página web.
+4. Hacemos clic derecho en cualquier parte de la página y seleccionamos "Ver código fuente de la página" (o presionamos Ctrl+U). Alternativamente, podemos usar la herramienta "Inspeccionar" (F12).
+5. Al revisar el documento HTML expuesto, encontramos un bloque de comentarios HTML () que el equipo de desarrollo olvidó eliminar antes de subir el portal a producción.
+6. Dentro de este registro de despliegue, el ingeniero detalla un problema con la base de datos y revela una "llave de acceso de emergencia" en texto claro.
+
+FLAG OBTENIDA:
+COMANDO{1NF0_L34K_0P3R4C10N_S4T3L1T4L}
+

@@ -1,0 +1,5 @@
+TÍTULO: Frecuencia Fantasma
+URL: http://192.168.70.43:5009
+
+REPORTE DE INTELIGENCIA:
+Operador, el sistema permite cambiar frecuencias con un formulario POST. Pero no pide confirmación de origen. Cree un archivo HTML malicioso que envíe automáticamente el valor "CIBER-BOL". Si un oficial autenticado lo abre, el cambio se ejecutará sin que él lo sepa. La FLAG aparecerá tras el ataque.

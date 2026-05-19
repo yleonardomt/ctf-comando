@@ -1,0 +1,19 @@
+=========================================
+SOLUCIONARIO RETO 5 - PATH TRAVERSAL
+=========================================
+Título: Navegación a Ciegas
+URL: http://192.168.70.43:5005
+Vulnerabilidad: Path Traversal / Salto de Directorio
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Accedemos al Sistema de Archivos Clasificados.
+2. Observamos que los botones cargan los documentos cambiando el parámetro 'doc' en la URL. Por ejemplo: ?doc=reporte_01.txt
+3. El sistema busca este archivo dentro de una carpeta específica en el servidor (sabemos por la descripción que es /app/documentos/).
+4. El enigma menciona que hay un archivo llamado 'secreto_militar.txt' ubicado un nivel más arriba (en /app/).
+5. Para salir del directorio actual y retroceder un nivel en Linux, utilizamos la sintaxis de salto "../".
+6. Modificamos la URL en la barra del navegador de la siguiente manera:
+   http://192.168.70.43:5005/?doc=../secreto_militar.txt
+7. Al presionar Enter, el backend procesa la ruta y el visor nos revela el archivo protegido que estaba fuera de nuestra carpeta de acceso.
+
+FLAG OBTENIDA:
+COMANDO{P4TH_TR4V3RS4L_4RCH1V0S_C0MPR0M3T1D0S}

@@ -1,0 +1,6 @@
+TÍTULO: Rastreo y Evasión en el Radar
+URL: http://192.168.70.43:5002
+VULNERABILIDAD: XSS Reflejado (Cross-Site Scripting)
+
+ENIGMA TÁCTICO:
+Operador, la caja de búsqueda refleja su texto directamente en la pantalla sin filtros. El sistema almacena un token de sesión en el navegador. Su misión: inyecte código JavaScript en el buscador usando etiquetas <script>. Si logra ejecutar alert(document.cookie), el sistema revelará la FLAG. El enemigo no sanitiza sus entradas. Aproveche esta falla.

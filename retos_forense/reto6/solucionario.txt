@@ -1,0 +1,6 @@
+FLAG: COMANDO{B4SHRC_4L1AS_F0R3NS3}
+
+SOLUCIÓN:
+cat .bashrc | grep COMANDO
+# o
+grep alias .bashrc

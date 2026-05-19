@@ -1,0 +1,6 @@
+TÍTULO: Navegación a Ciegas
+URL: http://192.168.70.43:5005
+VULNERABILIDAD: Path Traversal (Salto de Directorio)
+
+ENIGMA TÁCTICO:
+Operador, el sistema lee documentos desde una carpeta. El parámetro doc en la URL indica qué archivo mostrar. Pero nadie impide retroceder. Use ../ para salir de la carpeta actual y subir un nivel. Hay un archivo llamado secreto_militar.txt esperando ser descubierto. Encuéntrelo.

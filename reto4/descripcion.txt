@@ -1,0 +1,6 @@
+TÍTULO: Brecha en el Mando Central
+URL: http://192.168.70.43:5004
+VULNERABILIDAD: SQL Injection (Inyección SQL)
+
+ENIGMA TÁCTICO:
+Operador, el sistema de login pregunta usuario y contraseña. Pero el enemigo construyó mal su consulta. Usted puede terminar la frase del usuario y agregar una condición que siempre sea verdadera. Use una comilla simple y luego OR 1=1. El resto coméntelo con --. La base de datos obedecerá.

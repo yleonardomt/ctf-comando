@@ -1,0 +1,8 @@
+TÍTULO: El Cofre Cerrado
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: ZIP con contraseña débil
+
+DESCRIPCIÓN TÁCTICA:
+Operador, interceptamos un archivo ZIP protegido.
+Sabemos que usan contraseñas débiles como "4321".
+Use unzip para extraer el contenido.

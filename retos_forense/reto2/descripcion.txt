@@ -1,0 +1,6 @@
+TÍTULO: El Silencio de los Datos
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: Esteganografía (Steghide)
+
+DESCRIPCIÓN TÁCTICA:
+Operador, el enemigo ha enviado esta imagen gris como parte de una transmisión sospechosa. Los análisis preliminares indican que contiene información oculta en su interior utilizando la herramienta steghide. Sabemos por inteligencia que los agentes enemigos usan contraseñas débiles como "1234" para proteger sus secretos. Su misión es extraer el archivo oculto y revelar la FLAG. Use steghide con la contraseña mencionada. La imagen miente, operador. No todo lo que ve es real.

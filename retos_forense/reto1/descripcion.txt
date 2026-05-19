@@ -1,0 +1,11 @@
+TÍTULO: El Ojo que Todo lo Ve
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: Metadatos EXIF
+
+DESCRIPCIÓN TÁCTICA:
+Operador, hemos interceptado una imagen sospechosa en la red del enemigo.
+Los archivos no solo contienen píxeles, también guardan información oculta
+en sus metadatos. El enemigo es descuidado y a veces escribe secretos en
+los campos "Artista", "Descripción" o "Copyright". Use exiftool para
+inspeccionar la imagen y extraer la FLAG. La información que busca está
+en los detalles que no se ven a simple vista.

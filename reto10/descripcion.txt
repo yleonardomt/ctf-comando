@@ -1,0 +1,5 @@
+TÍTULO: El Susurro de las Sombras
+URL: http://192.168.70.43:5010
+
+REPORTE OPERATIVO:
+Operador, el sistema no muestra errores, solo dice "ACTIVO LOCALIZADO" o "NO ENCONTRADO". Es un oráculo binario. Debe preguntar carácter por carácter. Use AND (SELECT substr(secreto,1,1) FROM boveda_seguridad) = 'C'. Si responde "LOCALIZADO", acertó. Siga así hasta extraer toda la FLAG. Paciencia, soldado.

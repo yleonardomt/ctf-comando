@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  reto1:
+    build: ./reto1
+    ports: ["5001:5001"]
+    container_name: reto_1
+  reto2:
+    build: ./reto2
+    ports: ["5002:5002"]
+    container_name: reto_2
+  reto3:
+    build: ./reto3
+    ports: ["5003:5003"]
+    container_name: reto_3
+  reto4:
+    build: ./reto4
+    ports: ["5004:5004"]
+    container_name: reto_4
+  reto5:
+    build: ./reto5
+    ports: ["5005:5005"]
+    container_name: reto_5
+  reto6:
+    build: ./reto6
+    ports: ["5006:5006"]
+    container_name: reto_6
+  reto7:
+    build: ./reto7
+    ports: ["5007:5007"]
+    container_name: reto_7
+  reto8:
+    build: ./reto8
+    ports: ["5008:5008"]
+    container_name: reto_8
+  reto9:
+    build: ./reto9
+    ports: ["5009:5009"]
+    container_name: reto_9
+  reto10:
+    build: ./reto10
+    ports: ["5010:5010"]
+    container_name: reto_10

@@ -1,0 +1,22 @@
+=========================================
+SOLUCIONARIO RETO 6 - SSTI
+=========================================
+Título: El Motor Dinámico
+URL: http://192.168.70.43:5006
+Vulnerabilidad: Server-Side Template Injection (SSTI)
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Al acceder al sistema, observamos un campo que compila "reportes".
+2. Si ingresamos texto normal, el sistema simplemente lo devuelve en pantalla.
+3. El reporte táctico menciona que el motor procesa dinámicamente el contenido y que el objetivo está en la "configuración interna del entorno".
+4. Como la aplicación está hecha en Python/Flask (esto se asume en pentesting de caja negra probando payloads o reconociendo las cabeceras), el motor de plantillas por defecto es Jinja2.
+5. Un error común de desarrollo es pasar el input del usuario directamente a una función de renderizado de plantillas en lugar de pasarlo como variable.
+6. Verificamos la vulnerabilidad inyectando expresiones matemáticas de Jinja2:
+   {{ 7 * 7 }}
+7. Si el sistema responde "49", confirmamos el SSTI.
+8. Para acceder a la configuración interna de Flask, inyectamos el objeto 'config', el cual contiene todas las variables de entorno de la aplicación.
+   Payload: {{ config }}
+9. El motor compilará la plantilla, renderizará el diccionario completo de configuración de Flask y lo mostrará en pantalla, revelando la FLAG.
+
+FLAG OBTENIDA:
+COMANDO{SST1_M0T0R_D3_PL4NT1LL4S_C0MPR0M3T1D0}

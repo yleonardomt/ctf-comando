@@ -1,0 +1,11 @@
+TÍTULO: El Cazador de Firmas
+DIFICULTAD: Media (Amarillo)
+VULNERABILIDAD: Archivos Ocultos (Binwalk)
+
+DESCRIPCIÓN TÁCTICA:
+Operador, esta imagen azul parece normal pero contiene datos adicionales
+al final del archivo. El enemigo ha concatenado un archivo ZIP con
+información clasificada. La herramienta binwalk analiza firmas de archivos
+y puede extraer contenido oculto. Su misión es detectar y extraer el
+archivo incrustado para revelar la FLAG. Los píxeles no mienten, pero
+los bytes al final sí guardan secretos. Proceda con el análisis forense.

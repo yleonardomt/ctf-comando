@@ -1,0 +1,5 @@
+TÍTULO: Interrupción del Flujo
+URL: http://192.168.70.43:5007
+
+REPORTE OPERATIVO:
+Operador, el sistema ejecuta ping a la IP que usted ingrese. Pero puede encadenar más comandos con ; o &&. Intente 127.0.0.1; ls. Si ve archivos del servidor, tiene control. La FLAG está en /var/log/mando_central/access.log. Use cat para leerla. El enemigo no filtró caracteres peligrosos.

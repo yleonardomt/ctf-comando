@@ -1,0 +1,11 @@
+TÍTULO: El Guardián de los Extremos
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: Header/Footer Analysis
+
+DESCRIPCIÓN TÁCTICA:
+
+Operador, el secreto no está en el centro, sino en los bordes. El principio y el final guardan lo que buscas. Use 'dd' para extraer bytes desde el inicio y desde el final del archivo. La verdad está al principio... y también al final.
+
+COMANDOS ÚTILES:
+dd if=archivo.dat bs=1 skip=64 count=50 2>/dev/null
+dd if=archivo.dat bs=1 skip=4M count=50 2>/dev/null

@@ -1,0 +1,35 @@
+=========================================
+SOLUCIONARIO RETO FORENSE 4 - BINWALK
+=========================================
+Título: El Cazador de Firmas
+Vulnerabilidad: Archivos Ocultos por Concatenación
+Dificultad: Media
+
+FLAG OBTENIDA:
+COMANDO{B1NW4LK_F1RMW4R3_4N4L1S1S_F0R3NS3}
+
+PASOS PARA RESOLVER:
+1. Instalar binwalk:
+   sudo apt install binwalk
+
+2. Analizar la imagen:
+   binwalk imagen.png
+
+3. Extraer archivos ocultos:
+   binwalk -e imagen.png
+
+4. Leer la flag:
+   cat _imagen.png.extracted/*.txt
+   o
+   cat _imagen.png.extracted/flag.txt
+
+HERRAMIENTAS ÚTILES:
+- binwalk
+- dd (extracción manual)
+- strings
+- hexdump
+
+EXPLICACIÓN TÁCTICA:
+El enemigo ocultó la flag concatenando un archivo ZIP al final
+de una imagen PNG. Binwalk detecta la firma ZIP (PK) y permite
+extraer automáticamente el contenido oculto.

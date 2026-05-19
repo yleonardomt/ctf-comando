@@ -1,0 +1,6 @@
+TÍTULO: Rastros en la Arena
+URL: http://192.168.70.43:5003
+VULNERABILIDAD: Information Leakage (Fuga de Información)
+
+ENIGMA TÁCTICO:
+Operador, los soldados enemigos dejaron mensajes ocultos en su propio campamento. No están a la vista, pero basta con inspeccionar la estructura del terreno. Use clic derecho y luego "Ver código fuente". Busque entre <!-- y -->. Allí descansan los secretos que creían borrados.

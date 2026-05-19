@@ -1,0 +1,21 @@
+=========================================
+SOLUCIONARIO RETO 2 - XSS REFLEJADO
+=========================================
+Título: Rastreo y Evasión en el Radar
+URL: http://192.168.70.43:5002
+Vulnerabilidad: Cross-Site Scripting (XSS) Reflejado
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Al acceder a la plataforma táctica, observamos un campo de entrada para escanear un "objetivo".
+2. Si ingresamos cualquier texto (por ejemplo, "Prueba"), la plataforma nos devuelve el texto tal cual en la respuesta: "Resultados de interceptación para el parámetro: Prueba".
+3. Al revisar el código fuente o el comportamiento, notamos que nuestra entrada se refleja sin escapar los caracteres especiales de HTML/JavaScript.
+4. El enigma menciona que existe un "token de autenticación" almacenado en la sesión (Cookies).
+5. Para extraer esta cookie, aprovechamos la inyección para ejecutar código JavaScript usando un payload básico de XSS. Ingresamos en el buscador:
+
+   <script>alert(document.cookie)</script>
+
+6. Al hacer clic en "INICIAR ESCANEO", el navegador interpreta las etiquetas <script>, ejecuta el código y levanta una ventana de alerta mostrando las cookies de la sesión.
+7. En la alerta revelada encontraremos la flag del sistema.
+
+FLAG OBTENIDA:
+COMANDO{XSS_T4CT1C0_1NT3RC3PT4D0}

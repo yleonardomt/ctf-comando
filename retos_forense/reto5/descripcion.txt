@@ -1,0 +1,7 @@
+TÍTULO: El Historial del Operador
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: Análisis de Logs
+
+DESCRIPCIÓN TÁCTICA:
+Operador, capturamos el historial de comandos de un soldado enemigo.
+Revise línea por línea. La FLAG está ahí, camuflada entre comandos.

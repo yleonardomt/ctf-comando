@@ -1,0 +1,4 @@
+FLAG: COMANDO{L1NUX_C0M4ND0S_F0R3NS3}
+
+SOLUCIÓN:
+cat comandos.txt | grep COMANDO

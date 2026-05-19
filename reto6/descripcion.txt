@@ -1,0 +1,6 @@
+TÍTULO: El Motor Dinámico
+URL: http://192.168.70.43:5006
+
+REPORTE DE INTELIGENCIA:
+Operador, el motor de plantillas interpreta lo que usted escribe como si fuera código. Primero verifique con {{7*7}}. Si ve 49, está vulnerable. Después pregunte por la configuración del servidor con {{config}}. La FLAG estará expuesta en ese diccionario. El enemigo no separó datos de instrucciones.
+

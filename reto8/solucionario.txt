@@ -1,0 +1,36 @@
+=========================================
+SOLUCIONARIO RETO 8 - JWT TAMPERING
+=========================================
+Título: El Sello de la Legión
+URL: http://192.168.70.43:5008
+Vulnerabilidad: Broken Authentication / JWT Manipulation
+
+PASOS PARA LA EXPLOTACIÓN:
+1. Al ingresar a la web, el servidor nos asigna una cookie llamada 'access_token'.
+2. Copiamos el valor del token y lo analizamos en una herramienta como jwt.io.
+3. Vemos que el payload contiene: {"user": "operador_estandar", "role": "cadete"}.
+4. Intentamos cambiar "cadete" por "general", pero al modificarlo, la firma (signature) deja de ser válida.
+5. Debemos crackear la clave secreta. Debido al reporte ("BOLIVIA..."), probamos claves comunes relacionadas. El secreto es "BOLIVIA123".
+6. Usando el secreto, generamos un nuevo token con el payload:
+   {
+     "user": "operador_estandar",
+     "role": "general"
+   }
+7. Sustituimos la cookie original en el navegador por nuestro nuevo token manipulado.
+8. Recargamos la página. El sistema validará la firma con el secreto "BOLIVIA123", aceptará el rango de 'general' y liberará la FLAG.
+
+FLAG OBTENIDA:
+COMANDO{JWT_T4MP3R1NG_PR1V1L3G3_3SC4L4T10N}
+
+
+python3 << 'EOF'
+import jwt
+
+payload = {
+    "user": "operador_estandar",
+    "role": "general"
+}
+secret = "BOLIVIA123"
+new_token = jwt.encode(payload, secret, algorithm="HS256")
+print("Nuevo token:", new_token)
+EOF

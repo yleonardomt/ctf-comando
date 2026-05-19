@@ -1,0 +1,7 @@
+TÍTULO: El Espejo de la Identidad
+URL: http://192.168.70.43:5001
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: IDOR (Insecure Direct Object Reference)
+
+ENIGMA:
+Operador, el sistema ha filtrado un parámetro en la cadena de enlace: id=1. Usted es el Activo N°1, pero inteligencia reporta un segundo activo con mayor privilegio. Su misión: modifique manualmente el identificador en la barra de direcciones para acceder al perfil del siguiente operador. El enemigo confía ciegamente en sus inputs. Un paso más allá de su posición actual y la FLAG será revelada. Reconozca identificadores adyacentes. Ejecute.
